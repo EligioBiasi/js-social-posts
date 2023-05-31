@@ -117,12 +117,16 @@ const postContainer = document.getElementById('container');
 // Milestone 2
 // Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e incrementiamo il counter dei likes relativo.
 // Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like.
+    const idContainer=[];
     
+
     for(let y = 0; y<posts.length;y++){
         const likeButton = document.querySelectorAll('div.likes.js-likes')[y];
-        console.log(likeButton.children[1].children[0].innerHTML-1);
+        const idFinder = posts[y];
+        const{id}=idFinder;
+
         likeButton.children[0].addEventListener('click', function(){
-            
+
             if(likeButton.children[0].lastElementChild.classList.contains('like-button--liked')){
                 likeButton.children[0].lastElementChild.classList.remove('like-button--liked');
                 let unlike = parseInt(likeButton.children[1].children[0].innerHTML)-1;
@@ -133,8 +137,10 @@ const postContainer = document.getElementById('container');
                 likeButton.children[1].children[0].innerHTML;
                 let like = parseInt(likeButton.children[1].children[0].innerHTML)+1;
                 likeButton.children[1].children[0].innerHTML = like;
+                idContainer.push(id);
             }
         })
     }
+
 
     
