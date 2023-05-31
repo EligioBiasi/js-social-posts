@@ -72,16 +72,13 @@ const postContainer = document.getElementById('container');
 
         //recupero gli elementi che mi serve siano visibili
         const{content,media,likes,created}=singlePost;
-        console.log(content,media,likes,created)
 
         // uso un altra variabile per navigare nella matrioska di oggetti e recupero dagli elementi due valori necessari
         const user = singlePost.author;
 
         const userName =user.name;
-        console.log(userName);
-        
+
         const userImage =user.image;
-        console.log(userImage);
 
         //inserisco gli elementi nel template literal e ciclando nel for si creano le varie card con le info
         postContainer.innerHTML+=
@@ -120,3 +117,10 @@ const postContainer = document.getElementById('container');
 // Milestone 2
 // Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e incrementiamo il counter dei likes relativo.
 // Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like.
+
+    const likeButton = document.querySelector('div.likes__cta');
+
+    likeButton.addEventListener('click', function(){
+        document.querySelectorAll('a.like-button').classList.add('like-button--liked');
+
+    })
