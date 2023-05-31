@@ -55,3 +55,33 @@ const posts = [
         "created": "2021-03-05"
     }
 ];
+
+
+
+// Milestone 1
+// Prendendo come riferimento il layout di esempio presente nell'html, stampiamo i post del nostro feed.
+
+// ottengo il container dove andranno le card dei post
+const postContainer = document.getElementById('container');
+
+    for(let i = 0;i<posts.length;i++){
+
+        const singlePost = posts[i]
+        const{content,media,name,image,likes,created}=singlePost
+        console.log(content,media,likes,created)
+
+        
+    };
+
+
+
+
+
+
+
+
+
+
+// Milestone 2
+// Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e incrementiamo il counter dei likes relativo.
+// Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like.
