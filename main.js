@@ -38,7 +38,7 @@ const posts = [
         "media": "https://unsplash.it/600/400?image=24",
         "author": {
             "name": "Luca Formicola",
-            "image": null
+            "image": "https://unsplash.it/300/300?image=29"
         },
         "likes": 56,
         "created": "2021-04-03"
@@ -68,14 +68,48 @@ const postContainer = document.getElementById('container');
     for(let i = 0;i<posts.length;i++){
 
         const singlePost = posts[i];
-        const{content,media,name,image,likes,created}=singlePost;
-        // console.log(content,media,likes,created)
+        const{content,media,likes,created}=singlePost;
+        console.log(content,media,likes,created)
 
         const user = singlePost.author;
-        console.log(user);
-        const userData =user.name;
-        console.log(userData)
 
+        const userName =user.name;
+        console.log(userName);
+        
+        const userImage =user.image;
+        console.log(userImage);
+
+        postContainer.innerHTML+=
+    `<div class="post">
+        <div class="post__header">
+            <div class="post-meta">                    
+                <div class="post-meta__icon">
+                    <img class="profile-pic" src="${userImage}" alt="">                    
+                </div>
+                <div class="post-meta__data">
+                    <div class="post-meta__author">${userName}</div>
+                    <div class="post-meta__time">${created}</div>
+                </div>                    
+            </div>
+        </div>
+        <div class="post__text">${content}</div>
+        <div class="post__image">
+            <img src="${media}" alt="">
+        </div>
+        <div class="post__footer">
+            <div class="likes js-likes">
+                <div class="likes__cta">
+                    <a class="like-button  js-like-button" href="#" data-postid="1">
+                        <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
+                        <span class="like-button__label">Mi Piace</span>
+                    </a>
+                </div>
+                <div class="likes__counter">
+                    Piace a <b id="like-counter-1" class="js-likes-counter">${likes}</b> persone
+                </div>
+            </div> 
+        </div>            
+    </div>`
     };
 
 
