@@ -64,13 +64,18 @@ const posts = [
 // ottengo il container dove andranno le card dei post
 const postContainer = document.getElementById('container');
 
+// recupero dall'array di oggetti gli elementi che mi servono
     for(let i = 0;i<posts.length;i++){
 
-        const singlePost = posts[i]
-        const{content,media,name,image,likes,created}=singlePost
-        console.log(content,media,likes,created)
+        const singlePost = posts[i];
+        const{content,media,name,image,likes,created}=singlePost;
+        // console.log(content,media,likes,created)
 
-        
+        const user = singlePost.author;
+        console.log(user);
+        const userData =user.name;
+        console.log(userData)
+
     };
 
 
