@@ -67,10 +67,14 @@ const postContainer = document.getElementById('container');
 // recupero dall'array di oggetti gli elementi che mi servono
     for(let i = 0;i<posts.length;i++){
 
+        // scorro l'array oggetto per oggetto tramite una variabile
         const singlePost = posts[i];
+
+        //recupero gli elementi che mi serve siano visibili
         const{content,media,likes,created}=singlePost;
         console.log(content,media,likes,created)
 
+        // uso un altra variabile per navigare nella matrioska di oggetti e recupero dagli elementi due valori necessari
         const user = singlePost.author;
 
         const userName =user.name;
@@ -79,6 +83,7 @@ const postContainer = document.getElementById('container');
         const userImage =user.image;
         console.log(userImage);
 
+        //inserisco gli elementi nel template literal e ciclando nel for si creano le varie card con le info
         postContainer.innerHTML+=
     `<div class="post">
         <div class="post__header">
@@ -111,15 +116,6 @@ const postContainer = document.getElementById('container');
         </div>            
     </div>`
     };
-
-
-
-
-
-
-
-
-
 
 // Milestone 2
 // Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e incrementiamo il counter dei likes relativo.
